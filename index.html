@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+    <style>
+        @font-face {
+            font-family: 'Rubik';
+            src: url('fonts/rubik/rubik.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            text-align: center;
+            align-items: center;
+            justify-content: center;  /* Přidáno pro centrování */
+            display: flex;  /* Přidáno pro flexbox */
+            flex-direction: column;  /* Přidáno pro vertikální centrování */
+            margin: 0;  /* Odstraní okraje těla stránky */
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: background-image 1s ease;
+        }
+        #clock {
+            margin-top: 4rem;
+            font-size: 5rem;
+        }
+        #search-bar {
+            margin-top: 6rem;
+        }
+        #search-input,
+        #search-input:focus {
+            padding: 5px;
+            font-size: large;
+            outline: none;
+            border: none;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.475);
+            width: 23rem;
+            height: 3rem;
+        }
+        .select {
+            padding: 10px;
+            border: none;
+            border-radius: 150px;
+            border-color: white;
+            background-color: rgba(255, 255, 255, 0.475);
+        }
+        .select:hover,
+        #about:hover {
+            background-color: rgba(255, 255, 255, 0.797); 
+        }
+        #date {
+            font-size: 1.5rem;
+        }
+        #author {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+        #about-card {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 15rem;
+            border-radius: 25px 0 0 25px;
+            background-color: rgba(255, 255, 255, 0.475);
+            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        #about {
+            position: fixed;
+            padding: 10px;
+            border: none;
+            border-radius: 150px;
+            border-color: white;
+            background-color: rgba(255, 255, 255, 0.475);
+            bottom: 5rem;
+            right: 5rem;
+        }
+        #about-close {
+            position: fixed;
+            padding: 10px;
+            border: none;
+            border-radius: 150px;
+            border-color: white;
+            background-color: rgba(255, 255, 255, 0.475);
+            top: 0.5rem;
+            right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">--:--</div>
+    <div id="date"></div>
+    <div id="about-card">
+        <button id="about-close">close</button>
+        <h2>About</h2>
+        <p>by: adam4056</p>
+    </div>
+    <div id="search-bar">
+        <input type="text" id="search-input" placeholder="Type text...">
+        <p>
+            <button class="select" id="duckduckgo-button">DuckDuckGo</button>
+            <button class="select" id="google-button">Google</button>
+            <button class="select" id="yahoo-button">Yahoo</button>
+            <button class="select" id="bing-button">Bing</button>
+        </p>
+    </div>
+    <button id="about">About</button>
+    <div id="author"></div>
+    <script src="script.js"></script>
+</body>
+</html>
